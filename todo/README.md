@@ -43,6 +43,12 @@ Simple Todo App
 
         SimpleToDoApp
                 |
+                |---- displayToDoList                   :items
+                |---- addItem                           :displayToDoList
+                |---- removeItem                        :displayToDoList
+                |---- markItemCompleted                 :displayToDoList
+                |---- markItemPending                   :displayToDoList
+                |
                 |----- ToDoItems
                 |           |----- addItems(key)        :getItemsWithState()
                 |           |----- removeItems(key)     :getItemsWithState()
@@ -56,6 +62,6 @@ Simple Todo App
                 |           |----- showAllItems         :items
                 |           |----- addNewItem           :items
                 |           |----- removeItem           :items
-                |           |----- markItemCompleted    :item, items
-                |           |----- markItemPending      :item, items
+                |           |----- markItemCompleted    :items
+                |           |----- markItemPending      :items
         
