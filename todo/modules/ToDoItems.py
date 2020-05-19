@@ -3,49 +3,62 @@
 # define items globally
 items:dict = dict()
 
-""" 
-Get all items in items collection with both item and its state
 
-Returns:
-    items collection
-    
-"""
+def getItemsWithState():
+    """ 
+    Get all items in items collection with both item and its state
 
-
-""" 
-Get all items in items collection but without state information
-
-Returns:
-    items collection, keys only
-    
-"""
+    Returns:
+        items collection
+        
+    """
+    return items
 
 
-""" 
-Add item to the items collection
+def getItems():
+    """ 
+    Get all items in items collection but without state information
 
-Args:
-    string value of item to be added
-
-Returns:
-    getItemsWithState()    
-"""
-
-
-""" 
-Remove item from the items collection
-
-Args:
-    string value of item to be removed
-
-Returns:
-    getItemsWithState()    
-"""
+    Returns:
+        items collection, keys only
+        
+    """
+    return items.keys()
 
 
-""" 
-delete all contents of the items collection
+def addItem(itemsToAdd: list):
+    """ 
+    Add one or more items to the items collection
 
-Returns:
-    getItemsWithState()    
-"""
+    Args:
+        string value of item to be added
+
+    Returns:
+        getItemsWithState()    
+    """
+    [items.update({itemToAdd: 'pending'}) for itemToAdd in itemsToAdd]
+    return getItemsWithState()
+
+
+def removeItem(itemsToRemove: list):
+    """ 
+    Remove one or more items from the items collection
+
+    Args:
+        string value of item to be removed
+
+    Returns:
+        getItemsWithState()    
+    """
+    [items.pop(itemToRemove) for itemToRemove in itemsToRemove]
+    return getItemsWithState()
+
+
+def reset():
+    """ 
+    delete all contents of the items collection
+
+    Returns:
+        getItemsWithState()    
+    """
+    items.clear()
