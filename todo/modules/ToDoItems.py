@@ -26,7 +26,7 @@ def getItems():
     return items.keys()
 
 
-def addItem(itemsToAdd: list):
+def addItems(itemsToAdd: list):
     """ 
     Add one or more items to the items collection
 
@@ -40,7 +40,7 @@ def addItem(itemsToAdd: list):
     return getItemsWithState()
 
 
-def removeItem(itemsToRemove: list):
+def removeItems(itemsToRemove: list):
     """ 
     Remove one or more items from the items collection
 
